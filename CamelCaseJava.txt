@@ -1,0 +1,15 @@
+import java.util.*;
+public class Solution {
+	public static void main(String args[]){
+		Scanner obj = new Scanner(System.in);
+		String s=obj.nextLine();
+		char[] ch = s.toCharArray();
+		int i,flag=1;
+		for(i=0;i<ch.length;i++){
+			if(ch[i]>=65 && ch[i]<=90){
+				flag++;
+			}
+		}
+		System.out.println(flag);
+	}
+}

@@ -1,0 +1,54 @@
+import java.util.*;
+public class Solution {	
+	static int kaprekar(long k){
+		String a,b,l,r;
+		long left=0,right=0;
+		l = new String();
+		r = new String();
+		a = Long.toString(k);
+		long sq = k*k;
+		b = Long.toString(sq);
+		int d = a.length();
+		int flag = b.length();
+		if(flag-d==d){
+			l=b.substring(0,d);
+			r=b.substring(d,flag);
+		}
+		if(flag-d==d-1){
+			l=b.substring(0,d-1);
+			r=b.substring(d-1,flag);
+		}
+		left = Long.parseLong(l);
+		right = Long.parseLong(r);
+		if(left+right==k)
+			return 1;
+		else
+			return 0;
+	}
+	public static void main(String args[]){
+	Scanner s = new Scanner(System.in);
+	long low = s.nextLong();
+	long high = s.nextLong();
+	int f1=0;
+	long i=low;
+	while(i<=high){
+		if(i==1)
+			{System.out.print(i+" ");
+			i+=3;}
+		if(i==2)
+			i+=2;
+		if(i==3)
+			i+=1;
+		int x = Solution.kaprekar(i);
+		if(x==1){
+			System.out.print(i+" ");
+			f1++;
+		}
+		i++;
+		
+	}
+	if(f1==0)
+		System.out.println("INVALID RANGE");
+		
+	}
+}
